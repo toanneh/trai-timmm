@@ -8,7 +8,8 @@
       height: 100%;
       padding: 0;
       margin: 0;
-      background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+      /* nền xanh nước biển nhạt */
+      background: radial-gradient(circle at center, #aeeaff, #70d6ff, #38b6ff);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -26,17 +27,20 @@
       margin-top: 20px;
       font-size: 48px;
       font-family: 'Arial', sans-serif;
-      color: #ff3366;
-      text-shadow: 0 0 10px #ff0055, 0 0 20px #ff1a75, 0 0 40px #ff4da6;
+      color: #ffffff;
+      text-shadow: 
+        0 0 10px #00ffff, 
+        0 0 20px #33ffff, 
+        0 0 40px #66ffff;
       animation: glow 1.5s infinite alternate;
     }
 
     @keyframes glow {
       from {
-        text-shadow: 0 0 10px #ff0055, 0 0 20px #ff1a75, 0 0 40px #ff4da6;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #33ffff, 0 0 40px #66ffff;
       }
       to {
-        text-shadow: 0 0 20px #ff6699, 0 0 40px #ff99cc, 0 0 60px #ffccff;
+        text-shadow: 0 0 20px #66ffff, 0 0 40px #99ffff, 0 0 60px #ccffff;
       }
     }
   </style>
@@ -180,11 +184,11 @@
         t += 0.01; point = to(t); context.lineTo(point.x, point.y);
       }
       context.closePath();
-      // đổi màu trái tim (gradient neon hồng -> đỏ)
+      // trái tim trắng xanh dạ quang
       var gradient = context.createRadialGradient(canvas.width/2, canvas.height/2, 5, canvas.width/2, canvas.height/2, canvas.width/2);
-      gradient.addColorStop(0, "#ff6699");
-      gradient.addColorStop(0.5, "#ff0055");
-      gradient.addColorStop(1, "#ff0000");
+      gradient.addColorStop(0, "#ffffff");
+      gradient.addColorStop(0.5, "#ccffff");
+      gradient.addColorStop(1, "#00ffff");
       context.fillStyle = gradient;
       context.fill();
 
